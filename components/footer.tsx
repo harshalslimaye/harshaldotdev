@@ -2,10 +2,11 @@ import React from 'react';
 import Image from 'next/image';
 
 const Footer: React.FC<{}> = () => {
-  const images = [
+  const images = [ 
     { name: 'Linkedin', url: 'https://www.linkedin.com/in/harshal-limaye/' },
     { name: 'Twitter', url: 'https://twitter.com/harshalslimaye' },
     { name: 'Github', url: 'https://github.com/harshalslimaye' },
+    { name: 'stackoverflow', url: 'https://stackoverflow.com/users/7148982/harshal-limaye' },
     { name: 'Email', url: 'mailto:harshal.limaye@outlook.com' },
   ];
   return (
