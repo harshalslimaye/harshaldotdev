@@ -1,0 +1,83 @@
+@import url(reboot.css);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-color: #201f1e;
+  --primary-text-color: #ededed;
+  --secondary-text-color: #13b865;
+  --font-family: 'Source Code Pro', monospace;
+}
+body {
+  @apply text-lg;
+  background-color: var(--bg-color);
+  color: var(--primary-text-color);
+  font-family: var(--font-family);
+}
+.cursor {
+  animation: blinker 1s step-start infinite;
+}
+.layout {
+  @apply my-0 mx-auto relative;
+}
+h1 {
+  @apply text-6xl;
+}
+h2 {
+  @apply text-3xl;
+}
+h3 {
+  @apply text-3xl my-5;
+}
+a {
+  @apply underline transition-colors duration-500 !important;
+  text-decoration: var(--secondary-text-color);
+}
+a:hover {
+  @apply text-[var(--secondary-text-color)];
+}
+p {
+  @apply my-5;
+}
+code {
+  color: var(--secondary-text-color);
+}
+.site-title {
+  @apply no-underline !important;
+}
+.site-title:hover {
+  @apply text-[var(--primary-text-color)];
+}
+.hashtag {
+  @apply mr-2 py-0.5 px-2 border border-[var(--primary-text-color)] text-[var(--primary-text-color)] no-underline !important;
+}
+.hashtag:hover {
+  @apply border-[var(--secondary-text-color)] text-[var(--secondary-text-color)] !important;
+}
+.footer {
+  @apply flex py-5 border-solid border-t-4 border-[var(--primary-text-color)];
+}
+.searchbox {
+  width: 100%;
+  border: 1px solid var(--primary-text-color);
+  padding: 10px;
+}
+.searchbox input {
+  width: 95%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--primary-text-color);
+}
+.utterances {
+  margin: 0 !important;
+  padding: 0;
+  max-width: 100%;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
