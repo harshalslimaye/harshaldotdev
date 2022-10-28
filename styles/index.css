@@ -76,6 +76,9 @@ code {
   padding: 0;
   max-width: 100%;
 }
+.wrap-word {
+  word-break: break-word;
+}
 @keyframes blinker {
   50% {
     opacity: 0;

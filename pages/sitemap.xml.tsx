@@ -5,21 +5,33 @@ const Sitemap = () => {
 };
 
 export const getServerSideProps = async ({ res }) => {
-  const endpoint = `${process.env.IMAGE_DOMAIN}${process.env.ENDPOINT}`;
+  let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  `;
+  const postEndpoint = `${process.env.IMAGE_DOMAIN}${process.env.POSTS_ENDPOINT}`;
+  const catEndpoint = `${process.env.IMAGE_DOMAIN}${process.env.CAT_ENDPOINT}`;
+  const posts: any = await axios.get(postEndpoint);
+  const categories: any = await axios.get(catEndpoint);
 
-  const { data }: any = await axios.get(endpoint);
-
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-    <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    ${data
+  sitemap += `${posts.data
       .map((post) => {
-        return `<sitemap>
+        return `<url>
             <loc>https://harshal.dev/${post.slug}</loc>
-            <lastmod>${new Date(post.date).toISOString()}</lastmod>
-          </sitemap>`;
+            <lastmod>${new Date(post.modified).toISOString()}</lastmod>
+          </url>`;
       })
-      .join('')}
-    </sitemapindex>`;
+      .join('')}`;
+
+  sitemap += `${categories.data
+    .filter((category) => category.count > 0)
+    .map((category) => {
+      return `<url>
+          <loc>https://harshal.dev/category/${category.slug}</loc>
+          <lastmod> </lastmod>
+        </url>`;
+    })
+    .join('')}`;
+  sitemap += `</urlset>`;
 
   res.setHeader('Content-Type', 'text/xml');
   res.write(sitemap);
