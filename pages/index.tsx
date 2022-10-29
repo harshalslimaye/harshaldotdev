@@ -7,7 +7,8 @@ import { POSTS_PER_PAGE } from '../lib/utils';
 
 const Index = ({ posts, pageCount }) => {
   return (
-    <Layout title={'Home'}>
+    <Layout title={'Home'} description="JavaScript Enthusiast | Software Developer | Open Source Contributor |
+    Technical Speaker">
       <div className="mt-9">
         {posts.nodes &&
           posts.nodes.map((node, i) => (

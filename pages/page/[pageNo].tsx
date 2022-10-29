@@ -7,9 +7,9 @@ import { getPageOffset, POSTS_PER_PAGE } from '../../lib/utils';
 
 const Page = (props) => {
   const { posts, currentPage, pageCount } = props;
-  
+
   return (
-    <Layout title={'Page'}>
+    <Layout title={'Home'} description={'Home'}>
       <div className="mt-9">
         {posts.nodes &&
           posts.nodes.map((node, i) => (
@@ -48,7 +48,7 @@ export async function getStaticProps({ params }) {
     props: {
       posts,
       currentPage: +pageNo,
-      pageCount
+      pageCount,
     },
     revalidate: 1,
   };

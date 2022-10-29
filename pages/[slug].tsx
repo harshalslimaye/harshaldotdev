@@ -14,7 +14,7 @@ interface PostProps extends BaseProps {
 const Post: React.FC<PostProps> = ({ post, posts }) => {
   return (
     post && (
-      <Layout title={`${post.title}`}>
+      <Layout title={`${post.title}`} description={post.excerpt}>
         <div className="my-5">
           <h1>{`${post.title}`}</h1>
           <PostInfo

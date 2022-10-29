@@ -7,10 +7,11 @@ import Script from 'next/script';
 import { useRouter } from 'next/router';
 
 interface LayoutProps extends BaseProps {
-  title: String;
+  title: string;
+  description?: string;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children, title }) => {
+const Layout: React.FC<LayoutProps> = ({ children, description, title }) => {
   const router = useRouter();
 
   useEffect(() => {
@@ -37,8 +38,16 @@ const Layout: React.FC<LayoutProps> = ({ children, title }) => {
       />
       <Head>
         <title>{title} | Harshal Limaye</title>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {description && (
+          <meta
+            name="description"
+            content={description.replace(/<\/?[^>]+(>|$)/g, '')}
+          />
+        )}
       </Head>
-      
+
       <Header />
       {/* <Navbar /> */}
       {children}
