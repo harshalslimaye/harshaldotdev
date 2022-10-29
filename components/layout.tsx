@@ -47,7 +47,6 @@ const Layout: React.FC<LayoutProps> = ({ children, description, title }) => {
           />
         )}
       </Head>
-
       <Header />
       {/* <Navbar /> */}
       {children}
