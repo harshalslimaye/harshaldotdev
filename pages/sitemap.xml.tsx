@@ -1,4 +1,5 @@
 import axios from 'axios';
+import moment from 'moment';
 
 const Sitemap = () => {
   return null;
@@ -17,10 +18,22 @@ export const getServerSideProps = async ({ res }) => {
       .map((post) => {
         return `<url>
             <loc>https://harshal.dev/${post.slug}</loc>
-            <lastmod>${new Date(post.modified).toISOString()}</lastmod>
+            <lastmod>${
+              moment(post.modified).format('YYYY-MM-DD')
+            }</lastmod>
           </url>`;
       })
       .join('')}`;
+
+  sitemap += `${categories.data
+    .filter((category) => category.count > 0)
+    .map((category) => {
+      return `<url>
+          <loc>https://harshal.dev/category/${category.slug}</loc>
+          <lastmod> </lastmod>
+        </url>`;
+    })
+    .join('')}`;
   sitemap += `</urlset>`;
 
   res.setHeader('Content-Type', 'text/xml');
