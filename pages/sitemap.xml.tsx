@@ -25,15 +25,6 @@ export const getServerSideProps = async ({ res }) => {
       })
       .join('')}`;
 
-  sitemap += `${categories.data
-    .filter((category) => category.count > 0)
-    .map((category) => {
-      return `<url>
-          <loc>https://harshal.dev/category/${category.slug}</loc>
-          <lastmod> </lastmod>
-        </url>`;
-    })
-    .join('')}`;
   sitemap += `</urlset>`;
 
   res.setHeader('Content-Type', 'text/xml');
