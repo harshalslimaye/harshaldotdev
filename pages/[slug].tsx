@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
+import { useRouter } from 'next/router';
 import React from 'react';
 import UtterancesComments from '../components/comments';
 import Layout from '../components/layout';
@@ -12,6 +13,8 @@ interface PostProps extends BaseProps {
 }
 
 const Post: React.FC<PostProps> = ({ post, posts }) => {
+  const router = useRouter();
+
   return (
     post && (
       <Layout title={`${post.title}`} description={post.excerpt}>
@@ -23,6 +26,18 @@ const Post: React.FC<PostProps> = ({ post, posts }) => {
             readtime={post.readtime}
           />
           <div
+            onClick={(e: any) => {
+              e.preventDefault();
+              if (e.target && e.target.href) {
+                const href = e.target.href;
+                if (href.indexOf("harshal.dev") !== -1) {
+                  const slug = href.split("harshal.dev")[1];
+                  slug && router.push(slug);
+                } else {
+                  window.open(href, '_blank')
+                }
+              }
+            }}
             className="text-justify"
             dangerouslySetInnerHTML={{ __html: post.content }}
           ></div>

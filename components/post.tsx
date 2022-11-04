@@ -21,18 +21,23 @@ interface PostProps extends BaseProps {
 
 const Post: React.FC<PostProps> = (props) => {
   const { title, date, excerpt, slug, categories, readtime } = props;
-  const readmore = excerpt.length > 150 ? '...' : '';
+  const readmore = excerpt.length > 250 ? '...' : '';
 
   return (
-    <div className="my-8">
+    <div className="post-block">
       <h2>
         <Link href={`${slug}`}>{title}</Link>
       </h2>
       <PostInfo date={date} categories={categories} readtime={readtime} />
       <div
         className="text-justify"
-        dangerouslySetInnerHTML={{ __html: `${excerpt.slice(0, 160)}${readmore}` }}
+        dangerouslySetInnerHTML={{ __html: `${excerpt.slice(0, 250)}${readmore}` }}
       ></div>
+      <p>
+        <Link href={`${slug}`}>
+          <a className="box-link">Read more &#8594;</a>
+        </Link>
+      </p>
     </div>
   );
 };

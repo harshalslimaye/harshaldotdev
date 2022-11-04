@@ -4,7 +4,7 @@ import Prompt from './prompt';
 
 const Header: React.FC<{}> = () => {
   return (
-    <div className="mt-10">
+    <div className="header">
       <h1 className="flex">
         <Prompt />
         <span className="ml-2.5">
