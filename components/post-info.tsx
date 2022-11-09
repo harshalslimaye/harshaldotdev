@@ -26,7 +26,7 @@ const PostInfo: React.FC<PostInfo> = ({ date, categories, readtime }) => {
       {categories.nodes &&
         categories.nodes.map((node, i) => (
           <span key={`${node.slug}`}>
-            <Link href={`category/${node.slug}`}>
+            <Link href={`/category/${node.slug}`}>
               <a className="box-link">{`#${node.name}`}</a>
             </Link>
           </span>
