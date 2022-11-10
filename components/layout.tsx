@@ -29,7 +29,7 @@ const Layout: React.FC<LayoutProps> = ({ children, description, title }) => {
   }, []);
 
   return (
-    <div className="layout w-4/5 md:w-3/5">
+    <div className="layout w-11/12 md:w-3/5">
       <Script
         id="prism"
         src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"

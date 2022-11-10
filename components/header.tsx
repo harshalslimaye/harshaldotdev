@@ -5,14 +5,14 @@ import Prompt from './prompt';
 const Header: React.FC<{}> = () => {
   return (
     <div className="header">
-      <h1 className="flex">
+      <div className="flex logo">
         <Prompt />
         <span className="ml-2.5">
           <Link href={'/'}>
             <a className="site-title">Harshal Limaye</a>
           </Link>
         </span>
-      </h1>
+      </div>
       <small className="mt-1">
         JavaScript Enthusiast | Software Developer | Open Source Contributor |
         Technical Speaker

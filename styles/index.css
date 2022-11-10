@@ -45,6 +45,12 @@ p {
 code {
   color: var(--secondary-text-color);
 }
+.logo {
+  font-size: 44px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
 .site-title {
   @apply no-underline !important;
 }
@@ -61,7 +67,7 @@ code {
   @apply flex py-5 border-solid border-t-4 border-[var(--primary-text-color)];
 }
 .box-link {
-  @apply no-underline !important
+  @apply no-underline !important;
 }
 .box-link:hover {
   @apply text-[var(--bg-color)] no-underline !important;
@@ -94,6 +100,28 @@ code {
 }
 .wrap-word {
   word-break: break-word;
+}
+.read-more {
+  @apply no-underline text-[var(--primary-text-color)] !important;
+}
+.read-more:hover {
+  @apply no-underline text-[var(--primary-text-color)] !important;
+}
+.read-more:hover span {
+  display: inline-block !important;
+  transition: all .5s;
+  animation: arrow .1s;
+}
+@keyframes arrow {
+  0% {
+    margin-left: -10px;
+  }
+  50% {
+    margin-left: -5px;
+  }
+  100% {
+    margin-left: 0px;
+  }
 }
 @keyframes blinker {
   50% {

@@ -35,7 +35,7 @@ const Post: React.FC<PostProps> = (props) => {
       ></div>
       <p>
         <Link href={`/${slug}`}>
-          <a className="box-link">Read more &#8594;</a>
+          <a className="read-more">Read more <span className="hidden">&#8594;</span></a>
         </Link>
       </p>
     </div>
