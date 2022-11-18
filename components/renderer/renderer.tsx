@@ -7,8 +7,6 @@ import { Paragraph } from './paragraph';
 export const Renderer: React.FC<any> = ({ blocks }) => {
   const types = ['core/paragraph', 'core/image', 'core/code', 'core/heading'];
 
-  console.log(blocks);
-
   return (
     <>
       {blocks
@@ -27,6 +25,7 @@ export const Renderer: React.FC<any> = ({ blocks }) => {
           parsed: JSON.parse(block.attributesJSON),
         }))
         .map((block) => {
+          console.log(block.order);
           switch (block.name) {
             case 'core/paragraph':
               return <Paragraph key={block.order} block={block} />;

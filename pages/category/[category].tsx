@@ -9,7 +9,8 @@ const getTitle = (key: string): string => {
     "angular": "Angular",
     "javascript": "JavaScript",
     "chrome-extensions": "Chrome Extensions",
-    "gatsby-js": "Gatsby.js"
+    "gatsby-js": "Gatsby.js",
+    "rust": "Rust"
   };
 
   return map[key];
