@@ -9,7 +9,7 @@ const Header: React.FC<{}> = () => {
         <Prompt />
         <span className="ml-2.5">
           <Link href={'/'}>
-            <a className="site-title">Harshal Limaye</a>
+            <a className="site-title leading-10 md:leading-4">Harshal Limaye</a>
           </Link>
         </span>
       </div>

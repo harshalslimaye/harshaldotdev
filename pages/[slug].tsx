@@ -4,6 +4,7 @@ import React from 'react';
 import UtterancesComments from '../components/comments';
 import Layout from '../components/layout';
 import PostInfo from '../components/post-info';
+import { Renderer } from '../components/renderer/renderer';
 import { BaseProps } from '../interfaces/props';
 import { getAllPostsWithSlug, getPostAndMorePosts } from '../lib/api';
 
@@ -25,22 +26,7 @@ const Post: React.FC<PostProps> = ({ post, posts }) => {
             categories={post.categories}
             readtime={post.readtime}
           />
-          <div
-            onClick={(e: any) => {
-              e.preventDefault();
-              if (e.target && e.target.href) {
-                const href = e.target.href;
-                if (href.indexOf("harshal.dev") !== -1) {
-                  const slug = href.split("harshal.dev")[1];
-                  slug && router.push(slug);
-                } else {
-                  window.open(href, '_blank')
-                }
-              }
-            }}
-            className="text-justify"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          ></div>
+          <Renderer blocks={post.blocks} />
         </div>
         <UtterancesComments />
       </Layout>

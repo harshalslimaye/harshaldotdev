@@ -109,6 +109,11 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
       slug
       date
       readtime
+      blocks {
+        name
+        attributesJSON
+        order
+      }
       featuredImage {
         node {
           sourceUrl

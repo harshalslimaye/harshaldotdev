@@ -2,7 +2,6 @@ import Link from 'next/link';
 import Layout from '../components/layout';
 
 const PageNotFound = () => {
-  console.log('hi')
   return (
     <Layout title={'404! Page not found!'} description={'Page not found!'}>
       <div className="text-center pt-20">

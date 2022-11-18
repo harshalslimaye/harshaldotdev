@@ -20,7 +20,6 @@ const UtterancesComments = () => {
     });
 
     setTimeout(() => {
-      console.log('render')
       if (ref && ref.current) {
         (ref.current as any).append(script);
       }

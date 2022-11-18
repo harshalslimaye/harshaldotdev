@@ -11,7 +11,7 @@ const getTitle = (key: string): string => {
     "chrome-extensions": "Chrome Extensions",
     "gatsby-js": "Gatsby.js"
   };
-  console.log(key);
+
   return map[key];
 }
 
