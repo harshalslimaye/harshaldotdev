@@ -38,6 +38,7 @@ const Layout: React.FC<LayoutProps> = ({ children, description, title }) => {
       />
       <Head>
         <title>{title} | Harshal Limaye</title>
+        <link rel="icon" href={'/images/favicon.ico'} />
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {description && (
