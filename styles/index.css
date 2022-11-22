@@ -57,6 +57,9 @@ code {
 .site-title:hover {
   @apply text-[var(--primary-text-color)];
 }
+.hashtags {
+  @apply flex flex-wrap leading-9 md:leading-none mt-5;
+}
 .hashtag {
   @apply mr-2 py-0.5 px-2 border border-[var(--primary-text-color)] text-[var(--primary-text-color)] no-underline !important;
 }

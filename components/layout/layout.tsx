@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { BaseProps } from '../interfaces/props';
+import { BaseProps } from '../../interfaces/props';
 import Header from './header';
 import React, { useEffect, useState } from 'react';
 import Footer from './footer';
@@ -49,7 +49,6 @@ const Layout: React.FC<LayoutProps> = ({ children, description, title }) => {
         )}
       </Head>
       <Header />
-      {/* <Navbar /> */}
       <div style={{
         minHeight: 'calc(100vh - 230px)'
       }}>{children}</div>

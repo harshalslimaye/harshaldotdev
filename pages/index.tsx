@@ -2,7 +2,7 @@ import { GetStaticProps } from 'next';
 import { getPageCount, getPaginatedPosts } from '../lib/api';
 import { POSTS_PER_PAGE } from '../lib/utils';
 
-import Layout from '../components/layout';
+import Layout from '../components/layout/layout';
 import Pagination from '../components/pagination';
 import Post from '../components/post';
 

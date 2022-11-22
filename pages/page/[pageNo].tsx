@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../../components/layout';
+import Layout from '../../components/layout/layout';
 import Pagination from '../../components/pagination';
 import Post from '../../components/post';
 import { getPageCount, getPaginatedPosts } from '../../lib/api';

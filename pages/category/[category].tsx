@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
-import Layout from '../../components/layout';
+import Layout from '../../components/layout/layout';
 import Post from '../../components/post';
 import { getAllCategories, getPostsByCategory } from '../../lib/api';
 
@@ -10,7 +10,8 @@ const getTitle = (key: string): string => {
     "javascript": "JavaScript",
     "chrome-extensions": "Chrome Extensions",
     "gatsby-js": "Gatsby.js",
-    "rust": "Rust"
+    "rust": "Rust",
+    "vscode": "Visual Studio Code"
   };
 
   return map[key];

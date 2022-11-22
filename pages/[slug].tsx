@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import React from 'react';
 import UtterancesComments from '../components/comments';
-import Layout from '../components/layout';
+import Layout from '../components/layout/layout';
 import PostInfo from '../components/post-info';
 import { Renderer } from '../components/renderer/renderer';
 import { BaseProps } from '../interfaces/props';

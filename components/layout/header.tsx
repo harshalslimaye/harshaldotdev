@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
-import Prompt from './prompt';
+import Navbar from '../navbar/navbar';
+import Prompt from '../prompt';
 
 const Header: React.FC<{}> = () => {
   return (
@@ -17,6 +18,7 @@ const Header: React.FC<{}> = () => {
         JavaScript Enthusiast | Software Developer | Open Source Contributor |
         Technical Speaker
       </small>
+      <Navbar />
     </div>
   );
 };

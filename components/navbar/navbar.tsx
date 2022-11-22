@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
 const Navbar = () => {
@@ -6,22 +5,14 @@ const Navbar = () => {
     { name: 'Angular', slug: 'angular' },
     { name: 'JavaScript', slug: 'javascript' },
     { name: 'Gatsby.js', slug: 'gatsby-js' },
-    { name: 'Chrome-Extensions', slug: 'chrome-extensions' }
+    { name: 'Chrome-Extensions', slug: 'chrome-extensions' },
+    { name: 'Rust', slug: 'rust' },
+    { name: 'vscode', slug: 'vscode' },
   ];
 
   return (
     <>
-      <div className="searchbox mt-5">
-        <input
-          type="text"
-          name="search"
-          id="search"
-          placeholder="Search"
-          autoComplete={'off'}
-        />
-        <Image src={'/images/search.svg'} width={24} height={24} />
-      </div>
-      <ul className="flex mt-5">
+      <ul className="hashtags">
         {categories.map((c) => (
           <li key={c.slug}>
             <Link href={`/category/${c.slug}`}>
